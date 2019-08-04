@@ -1,6 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 // SUBTRACTION
+bool equal(string s1, string s2)
+{
+    int n1 = s1.length(), n2 = s2.length();
+    if(n1!=n2) return false;
+    for(int i=0; i<n1; i++)
+    {
+        if((s1[i]-'0')!=(s2[i]-'0')) return false;
+    }
+    return true;
+}
 bool small(string s1, string s2)
 {
     int n1=s1.length(); int n2=s2.length();
@@ -13,6 +23,7 @@ bool small(string s1, string s2)
             if((s1[i]-'0')>(s2[i]-'0')) return false;
             if((s1[i]-'0')<(s2[i]-'0')) return true;
         }
+        if(equal(s1, s2)) return false;
     }
 }
 int main() {
